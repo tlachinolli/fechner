@@ -1,0 +1,8 @@
+Dean Attali (2021). shinyjs: Easily Improve the User Experience of Your Shiny Apps in Seconds. R package version 2.1.0. https://CRAN.R-project.org/package=shinyjs
+Kiwihug. (2021), Foto de textil blanco con sombra negra. Recuperado de https://unsplash.com/es?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+Markowsky, George. (1992). Misconceptions about the Golden Ratio. The College Mathematics Journal. 23. 2-19. 10.1080/07468342.1992.11973428.
+R Core Team (2021). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+Victor Perrier, Fanny Meyer and David Granjon (2022). shinyWidgets: Custom Inputs Widgets for Shiny. R package version 0.6.4. https://CRAN.R-project.org/package=shinyWidgets
+Winston Chang, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert and Barbara Borges (2021). shiny: Web Application Framework for R. R package version 1.7.1. https://CRAN.R-project.org/package=shiny
+Abhinav Agrawal. (2018). R Shiny Tutorial | shinydashboard | add social media icons on right side of dashboard header(16). Recuperado de https://www.youtube.com/watch?v=6mwgMNgc8jI
+jdharrison. (2014). En respuesta a "Outputting multiple lines of text with renderText() in R shiny". Recuperado de https://stackoverflow.com/questions/23233497/outputting-multiple-lines-of-text-with-rendertext-in-r-shiny
