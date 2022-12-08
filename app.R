@@ -74,15 +74,17 @@ observeEvent(
         input$etiqueta <= 10 && input$etiqueta >= 1) {
       print("Su respuesta ha sido enviada")
       print(paste("La proporción Ud eligió fué: ", prop_ele))
-      write(prop_ele, file = "proporciones_elegidas.txt", append = TRUE)
+      write(prop_ele, file = "data/proporciones_elegidas.txt", append = TRUE)
     }
   })
   shinyjs::disable("etiqueta")
+  shinyjs::disable("enviar")
   }
 )
   
   output$barras <- renderPlot({
     v_tendencias <- readLines("data/proporciones_elegidas.txt")
+    if(length(v_tendencias) == 0 ) return(0)
     strtoi(v_tendencias)
     tabla <- table(round(as.numeric(v_tendencias), 2))
     v_col <- colors()[seq(1, 100, len = 10)]
