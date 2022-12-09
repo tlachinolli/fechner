@@ -116,7 +116,7 @@ server <- function(input, output) {
       if (is.numeric(input$etiqueta)  &&
           input$etiqueta <= 10 && input$etiqueta >= 1) {
         print("Su respuesta ha sido enviada")
-        print(paste("La proporción Ud eligió fué: ", prop_ele))
+        print(paste("La proporción que Ud eligió fué: ", prop_ele))
         write(prop_ele, file = "data/proporciones_elegidas.txt", append = TRUE)
       }
     })
