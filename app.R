@@ -113,7 +113,7 @@ server <- function(input, output) {
   observeEvent(input$enviar, {
     output$gracias <- renderPrint({
       prop_ele <- recuperar_respuesta(df_res, input$etiqueta)
-      if (!is.na(input$etiqueta) &&
+      if (is.numeric(input$etiqueta)  &&
           input$etiqueta <= 10 && input$etiqueta >= 1) {
         print("Su respuesta ha sido enviada")
         print(paste("La proporción Ud eligió fué: ", prop_ele))
@@ -126,22 +126,39 @@ server <- function(input, output) {
   
   output$barras <- renderPlot({
     v_tendencias <- readLines("data/proporciones_elegidas.txt")
-    if (length(v_tendencias) == 0)
-      return(0)
-    strtoi(v_tendencias)
-    tabla <- table(round(as.numeric(v_tendencias), 2))
-    v_col <- colors()[seq(1, 100, len = 10)]
-    par(cex = 1.2)
-    barplot(
-      tabla,
-      axes = FALSE,
-      main = "Tendencias",
-      xlab = "proporción elegida",
-      ylab = "frecuencia",
-      col = v_col
-    )
-    axis(2,
-         at = 0:max(tabla))
+    if (length(v_tendencias) == 0) {
+      par(cex = 1.2)
+      plot(
+        0:16,
+        0:16,
+        type = "n",
+        axes = FALSE,
+        ylab = NA,
+        xlab = NA,
+        xlim = c(0, 16),
+        ylim = c(0, 5)
+      )
+      text(8,
+           4,
+           c("Esta encuesta aún no ha sido contestada por nadie"))
+      
+    }
+    else{
+      strtoi(v_tendencias)
+      tabla <- table(round(as.numeric(v_tendencias), 2))
+      v_col <- colors()[seq(1, 100, len = 10)]
+      par(cex = 1.2)
+      barplot(
+        tabla,
+        axes = FALSE,
+        main = "Tendencias",
+        xlab = "proporción elegida",
+        ylab = "frecuencia",
+        col = v_col
+      )
+      axis(2,
+           at = 0:max(tabla))
+    }
   })
   
   output$ref <- renderUI({
